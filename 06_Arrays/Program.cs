@@ -121,7 +121,7 @@ namespace _06_Arrays
                 Console.WriteLine($"Number[{i}]: {numbers[i],3} / " +
                     $"Sum: {sum,4}");
             }
-            */
+            
 
             int[] numbers = new int[10];
             for (int i = 0; i < numbers.Length; i++) numbers[i] = random.Next(0,100);
@@ -141,6 +141,7 @@ namespace _06_Arrays
                 if (numbers[i] % 2 != 0)
                     Console.Write($"{numbers[i]} ");
             }
+            */
 
             #endregion
 

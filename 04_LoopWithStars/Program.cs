@@ -139,6 +139,7 @@ namespace _04_LoopWithStars
             */
             #endregion
 
+
             Console.ReadKey();
         }
     }
