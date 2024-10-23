@@ -129,6 +129,7 @@ namespace _07_Foreach
             
             #endregion
 
+
             Console.ReadLine();
 
         }
