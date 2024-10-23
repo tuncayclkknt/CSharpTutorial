@@ -55,7 +55,7 @@ namespace _07_Foreach
             #endregion
 
             #region Example Exam System App
-            /*
+            
             Console.WriteLine("***** C# *****"); 
             Console.WriteLine("");
 
@@ -126,7 +126,7 @@ namespace _07_Foreach
                     Console.WriteLine($"{studentNames[i]} failed the course.");
                 Console.WriteLine(new string('-',25));
             }
-            */
+            
             #endregion
 
             Console.ReadLine();
