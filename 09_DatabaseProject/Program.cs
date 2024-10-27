@@ -48,14 +48,9 @@ namespace _09_DatabaseProject
                     adapter.Fill(dataTable);
                     connection.Close();
 
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        foreach (var item in row.ItemArray)
-                        {
-                            Console.Write($"{item.ToString(),-20}");
-                        }
-                        Console.WriteLine();
-                    }
+                    foreach (DataRow row in dataTable.Rows)                  
+                        Console.WriteLine($"{row.ItemArray[0],3} {row.ItemArray[1],-15}");
+                    
                     connection.Close();
                     break;
 
@@ -68,13 +63,9 @@ namespace _09_DatabaseProject
                     connection.Close();
 
                     foreach (DataRow row in dataTable.Rows)
-                    {
-                        foreach (var item in row.ItemArray)
-                        {
-                            Console.Write($"{item.ToString(), -20}");
-                        }
-                        Console.WriteLine();
-                    }
+                        Console.WriteLine($"{row.ItemArray[0],3} {row.ItemArray[1],-20} " +
+                            $"{row.ItemArray[2],-9} {row.ItemArray[3],-5}");
+
                     connection.Close();
                     break;
 
@@ -87,13 +78,9 @@ namespace _09_DatabaseProject
                     connection.Close();
 
                     foreach (DataRow row in dataTable.Rows)
-                    {
-                        foreach (var item in row.ItemArray)
-                        {
-                            Console.Write($"{item.ToString(),-20}");
-                        }
-                        Console.WriteLine();
-                    }
+                        Console.WriteLine($"{row.ItemArray[0],3} {row.ItemArray[1],-20} " +
+                            $"{row.ItemArray[2],-3} {row.ItemArray[3],-9} {row.ItemArray[4],-9}");
+
                     connection.Close();
                     break;
 
