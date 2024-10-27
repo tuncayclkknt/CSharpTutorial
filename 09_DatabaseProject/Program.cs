@@ -15,7 +15,7 @@ namespace _09_DatabaseProject
             // Ado.net
 
             Console.WriteLine("***** C# Database Product-Catagory Info System *****");
-            Console.WriteLine("\n");
+            Console.WriteLine();
             Console.WriteLine(new string('-',25));
 
             string tableNumber;
@@ -34,20 +34,76 @@ namespace _09_DatabaseProject
                 "integrated security=true");
             connection.Open();
 
-            SqlCommand command = new SqlCommand("Select * from TblCatagory",connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-            connection.Close();
+            SqlCommand command;
+            SqlDataAdapter adapter;
+            DataTable dataTable;
 
-            foreach (DataRow row in dataTable.Rows)
+            switch (tableNumber)
             {
-                foreach (var item in row.ItemArray)
-                {
-                    Console.Write(item.ToString());
-                }
-                Console.WriteLine();
+                case "1":
+                    command = new SqlCommand("Select * from TblCatagory", connection);
+                    adapter = new SqlDataAdapter(command);
+                    dataTable = new DataTable();
 
+                    adapter.Fill(dataTable);
+                    connection.Close();
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        foreach (var item in row.ItemArray)
+                        {
+                            Console.Write($"{item.ToString(),-20}");
+                        }
+                        Console.WriteLine();
+                    }
+                    connection.Close();
+                    break;
+
+                case "2":
+                    command = new SqlCommand("Select * from TblProduct", connection);
+                    adapter = new SqlDataAdapter(command);
+                    dataTable = new DataTable();
+
+                    adapter.Fill(dataTable);
+                    connection.Close();
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        foreach (var item in row.ItemArray)
+                        {
+                            Console.Write($"{item.ToString(), -20}");
+                        }
+                        Console.WriteLine();
+                    }
+                    connection.Close();
+                    break;
+
+                case "3":
+                    command = new SqlCommand("Select * from TblOrder", connection);
+                    adapter = new SqlDataAdapter(command);
+                    dataTable = new DataTable();
+
+                    adapter.Fill(dataTable);
+                    connection.Close();
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        foreach (var item in row.ItemArray)
+                        {
+                            Console.Write($"{item.ToString(),-20}");
+                        }
+                        Console.WriteLine();
+                    }
+                    connection.Close();
+                    break;
+
+                case "4":
+                    connection.Close();
+                    break;
+
+                default:
+                    Console.WriteLine("Enter an invalid option.");
+                    break;
             }
 
 
